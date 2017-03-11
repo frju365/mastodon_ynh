@@ -47,6 +47,8 @@ umap collectstatic
 umap storagei18n
 umap createsuperuser
 
+# PWD
+cd $script_dir
 # Copy Files
 sudo cp ./config/uwsgi_params /srv/$app/uwsgi_params
 sudo cp ./config/uwsgi.ini /srv/$app/uwsgi.ini
