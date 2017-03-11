@@ -28,14 +28,16 @@ CHECK_FINALPATH	# Vérifie que le dossier de destination n'est pas déjà utilis
 sudo apt-get update
 sudo apt install python3.5 python3.5-dev python-virtualenv uwsgi uwsgi-plugin-python3 postgresql-9.5 postgresql-9.5-postgis-2.2 git
 
+# Prepare Umap to be installed
 sudo mkdir -p /srv/$app
-
 sudo useradd -N umap -d /srv/$app/
 
+# Setting up the database
 sudo -u postgres createuser $app
 sudo -u postgres createdb umap -O $app
 sudo -u postgres psql $app -c "CREATE EXTENSION postgis"
 
+# Installation de "umap"
 sudo -u $app -i
 virtualenv /srv/$app/venv --python=/usr/bin/python3.5
 source /srv/umap/venv/bin/activate
