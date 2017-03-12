@@ -49,7 +49,7 @@ sudo chmod 755 /srv/$app -R
         
 # Installation de "umap"
 sudo su -c "virtualenv /srv/$app/venv" $app
-sudo su -c "pip install $app-project" $app
+sudo pip install $app-project
 sudo su -c "wget https://raw.githubusercontent.com/umap-project/umap/master/umap/settings/local.py.sample -O /srv/$app/local.py" $app
 sudo su -c "export UMAP_SETTINGS=/srv/$app/local.py" $app
 sudo su -c "umap migrate" $app
