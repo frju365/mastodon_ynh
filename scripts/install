@@ -36,6 +36,9 @@ sudo useradd -N umap -d /srv/$app/
 # Setting up the database
 dbname=$app
 dbuser=$app
+
+# Generate random password
+dbpass=$(ynh_string_random)
 ##### dbpass
 ynh_psql_create_db "$dbname" "$dbuser"
 sudo -u postgres psql $app -c "CREATE EXTENSION postgis"
