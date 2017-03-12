@@ -40,7 +40,7 @@ dbuser=$app
 # Generate random password
 dbpass=$(ynh_string_random)
 ##### dbpass
-ynh_psql_create_db "$dbname" "$dbuser"
+ynh_psql_create_db "$dbname" "$dbuser" "$dbpass"
 sudo -u postgres psql $app -c "CREATE EXTENSION postgis"
 
 # Installation de "umap"
