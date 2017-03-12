@@ -33,8 +33,10 @@ sudo mkdir -p /srv/$app
 sudo useradd -N umap -d /srv/$app/
 
 # Setting up the database
-sudo -u postgres createuser $app
-sudo -u postgres createdb umap -O $app
+dbname=$app
+dbuser=$app
+##### dbpass
+ynh_psql_create_db "$dbname" "$dbuser"
 sudo -u postgres psql $app -c "CREATE EXTENSION postgis"
 
 # Installation de "umap"
