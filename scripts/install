@@ -45,15 +45,15 @@ sudo su -c "psql" postgres <<< \
         "CREATE EXTENSION postgis;"
         
 # Installation de "umap"
-sudo su -u $app -c "virtualenv /srv/$app/venv"
-sudo su -u $app -c "source /srv/umap/venv/bin/activate"
-sudo su -u $app -c "pip install $app-project"
-sudo su -u $app -c "wget https://raw.githubusercontent.com/umap-project/umap/master/umap/settings/local.py.sample -O /srv/$app/local.py"
-sudo su -u $app -c "export UMAP_SETTINGS=/srv/$app/local.py"
-sudo su -u $app -c "umap migrate"
-sudo su -u $app -c "umap collectstatic"
-sudo su -u $app -c "umap storagei18n"
-sudo su -u $app -c "umap createsuperuser"
+sudo su -c "virtualenv /srv/$app/venv" $app
+sudo su -c "source /srv/umap/venv/bin/activate" $app
+sudo su -c "pip install $app-project" $app
+sudo su -c "wget https://raw.githubusercontent.com/umap-project/umap/master/umap/settings/local.py.sample -O /srv/$app/local.py" $app
+sudo su -c "export UMAP_SETTINGS=/srv/$app/local.py" $app
+sudo su -c "umap migrate" $app
+sudo su -c "umap collectstatic" $app
+sudo su -c "umap storagei18n" $app
+sudo su -c "umap createsuperuser" $app  
 
 # PWD
 cd $script_dir
