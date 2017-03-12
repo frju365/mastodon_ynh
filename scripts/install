@@ -28,7 +28,7 @@ CHECK_FINALPATH	# Vérifie que le dossier de destination n'est pas déjà utilis
 # Install dependency to convert tracks to a readable format for the browser
 sudo cp -a ../conf/umap.list /etc/apt/sources.list.d/
 sudo apt-get update
-sudo apt-get -t stretch -y install python3.5 python3.5-dev python-virtualenv uwsgi uwsgi-plugin-python3 postgresql-9.5 postgresql-9.5-postgis-2.2 postgresql-server-dev-9.5 libpq-dev
+sudo apt-get -t stretch -y install python3.5 python3.5-dev python-virtualenv uwsgi uwsgi-plugin-python3 postgresql-9.4 postgresql-9.4-postgis-2.2 postgresql-server-dev-9.4 libpq-dev
 
 # Prepare Umap to be installed
 sudo mkdir -p /srv/$app
