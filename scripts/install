@@ -26,7 +26,7 @@ CHECK_FINALPATH	# Vérifie que le dossier de destination n'est pas déjà utilis
 
 # Install dependency to convert tracks to a readable format for the browser
 sudo apt-get update
-sudo apt-get install python python-dev python-virtualenv uwsgi uwsgi-plugin-python3 postgresql postgresql-*-postgis-2.2 git
+sudo apt-get install python python-dev python-virtualenv uwsgi uwsgi-plugin-python3 postgresql postgresql-9.4-postgis-2.1
 
 # Prepare Umap to be installed
 sudo mkdir -p /srv/$app
