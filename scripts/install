@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# Source app helpers
+source /usr/share/yunohost/helpers
 source .fonctions
 set -eu
 
