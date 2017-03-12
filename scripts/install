@@ -41,7 +41,7 @@ dbuser=$app
 dbpass=$(ynh_string_random)
 ##### dbpass
 ynh_psql_create_db "$dbname" "$dbuser" "$dbpass"
-sudo su -c "psql" $app <<< \
+sudo su -c "psql" postgres <<< \
         "CREATE EXTENSION postgis;"
         
 # Installation de "umap"
