@@ -1,3 +1,3 @@
-# umap_ynh
+# mastodon_ynh
 
 ETAT: NE FONCTIONNE PAS !
